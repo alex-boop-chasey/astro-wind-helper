@@ -11,6 +11,9 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
+// Optional: Uncomment for Cloudflare Pages deployment
+// import cloudflare from '@astrojs/cloudflare';
+
 import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
@@ -23,6 +26,27 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+
+  // Performance optimization: Inline CSS for faster initial page load
+  // This reduces HTTP requests and improves First Contentful Paint
+  build: {
+    inlineStylesheets: 'always',
+  },
+
+  /*
+   * Optional Cloudflare Pages adapter for server-side rendering or hybrid mode
+   * Uncomment to deploy to Cloudflare Pages with edge functions:
+   *
+   * adapter: cloudflare({
+   *   platformProxy: {
+   *     enabled: true,
+   *   },
+   *   imageService: 'compile',  // Optimized image handling
+   * }),
+   * output: 'server', // or 'hybrid'
+   *
+   * Don't forget to: npm install @astrojs/cloudflare
+   */
 
   integrations: [
     tailwind({
