@@ -1,0 +1,1416 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+// Hero Components
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+// Feature Components
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+// Content & Steps Components
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+// Other Major Widgets
+import Announcement from '~/components/widgets/Announcement.astro';
+import Note from '~/components/widgets/Note.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Blog Widgets
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro';
+
+// Navigation Components
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+const metadata = {
+  title: 'AstroWind Component Showcase - All Components & Sections',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Table of Contents -->
+  <div class="bg-blue-50 dark:bg-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center dark:text-white">
+        AstroWind Component Showcase
+      </h1>
+      <p class="text-lg text-center text-muted dark:text-slate-300 mb-8">
+        Browse all available components and sections from the AstroWind template
+      </p>
+
+      <nav class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">Quick Navigation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <a href="#hero-components" class="text-blue-600 dark:text-blue-400 hover:underline">Hero Components</a>
+          <a href="#feature-components" class="text-blue-600 dark:text-blue-400 hover:underline">Feature Components</a>
+          <a href="#content-components" class="text-blue-600 dark:text-blue-400 hover:underline">Content Component</a>
+          <a href="#steps-components" class="text-blue-600 dark:text-blue-400 hover:underline">Steps Components</a>
+          <a href="#announcement" class="text-blue-600 dark:text-blue-400 hover:underline">Announcement</a>
+          <a href="#note" class="text-blue-600 dark:text-blue-400 hover:underline">Note</a>
+          <a href="#brands" class="text-blue-600 dark:text-blue-400 hover:underline">Brands</a>
+          <a href="#stats" class="text-blue-600 dark:text-blue-400 hover:underline">Stats</a>
+          <a href="#pricing" class="text-blue-600 dark:text-blue-400 hover:underline">Pricing</a>
+          <a href="#testimonials" class="text-blue-600 dark:text-blue-400 hover:underline">Testimonials</a>
+          <a href="#faqs" class="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>
+          <a href="#contact" class="text-blue-600 dark:text-blue-400 hover:underline">Contact</a>
+          <a href="#call-to-action" class="text-blue-600 dark:text-blue-400 hover:underline">Call to Action</a>
+          <a href="#blog-widgets" class="text-blue-600 dark:text-blue-400 hover:underline">Blog Widgets</a>
+          <a href="#navigation" class="text-blue-600 dark:text-blue-400 hover:underline">Navigation (Header/Footer)</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO COMPONENTS SECTION -->
+  <div id="hero-components" class="bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-blue-500">
+        <h2 class="text-3xl font-bold dark:text-white">Hero Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Hero
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Hero.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Button.astro</code>
+        </p>
+      </div>
+
+      <Hero
+        actions={[
+          {
+            variant: 'primary',
+            text: 'Get template',
+            href: 'https://github.com/arthelokyo/astrowind',
+            target: '_blank',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ]}
+        image={{ src: '~/assets/images/hero-image.png', alt: 'Hero Image' }}
+      >
+        <Fragment slot="title">
+          Free template for <span class="hidden xl:inline">creating websites with</span>
+          <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+        </Fragment>
+
+        <Fragment slot="subtitle">
+          <span class="hidden sm:inline">
+            <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
+            + Tailwind CSS.</span
+          >
+          <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+          Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
+          Blogs.
+        </Fragment>
+      </Hero>
+    </div>
+
+    <!-- Hero2 -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Hero2
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Hero2.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Button.astro</code>
+        </p>
+      </div>
+
+      <Hero2
+        tagline="Alternative Hero Layout"
+        actions={[
+          { variant: 'primary', target: '_blank', text: 'Get Started', href: '#' },
+          { text: 'Learn more', href: '#' },
+        ]}
+        image={{
+          src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Hero2 Image',
+        }}
+      >
+        <Fragment slot="title">
+          Alternative hero layout with <br />
+          <span class="text-accent dark:text-white">different styling options</span>
+        </Fragment>
+
+        <Fragment slot="subtitle">
+          This is the Hero2 component variant, offering a different layout and styling approach for your landing pages.
+          Perfect for creating variation across different pages.
+        </Fragment>
+      </Hero2>
+    </div>
+
+    <!-- HeroText -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          HeroText
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/HeroText.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <HeroText
+        tagline="Text-Only Hero"
+        title="Stellar Pricing for Every Journey"
+        subtitle="Choose the perfect plan that aligns with your cosmic goals. This hero focuses on text without images."
+      />
+    </div>
+  </div>
+
+  <!-- FEATURE COMPONENTS SECTION -->
+  <div id="feature-components" class="bg-blue-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-green-500">
+        <h2 class="text-3xl font-bold dark:text-white">Feature Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Features
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Features.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/ItemGrid.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <Features
+        id="features"
+        tagline="Features"
+        title="What you get with AstroWind"
+        subtitle="One of the most professional and comprehensive templates currently on the market."
+        items={[
+          {
+            title: 'Astro + Tailwind CSS Integration',
+            description:
+              'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+            icon: 'tabler:brand-tailwind',
+          },
+          {
+            title: 'Ready-to-use Components',
+            description:
+              'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+            icon: 'tabler:components',
+          },
+          {
+            title: 'Best Practices',
+            description:
+              'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+            icon: 'tabler:list-check',
+          },
+          {
+            title: 'Excellent Page Speed',
+            description:
+              'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+            icon: 'tabler:rocket',
+          },
+          {
+            title: 'Search Engine Optimization (SEO)',
+            description:
+              "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
+            icon: 'tabler:arrows-right-left',
+          },
+          {
+            title: 'Open to new ideas and contributions',
+            description:
+              'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+            icon: 'tabler:bulb',
+          },
+        ]}
+      />
+    </div>
+
+    <!-- Features2 -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Features2
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Features2.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/ItemGrid2.astro</code>
+        </p>
+      </div>
+
+      <Features2
+        title="Most used widgets"
+        subtitle="Provides frequently used components for building websites using Tailwind CSS"
+        tagline="Components"
+        items={[
+          {
+            title: 'Headers',
+            description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+            icon: 'flat-color-icons:template',
+          },
+          {
+            title: 'Heros',
+            description:
+              "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+            icon: 'flat-color-icons:gallery',
+          },
+          {
+            title: 'Features',
+            description:
+              'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+            icon: 'flat-color-icons:approval',
+          },
+          {
+            title: 'Content',
+            description:
+              "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+            icon: 'flat-color-icons:document',
+          },
+          {
+            title: 'Call-to-Action',
+            description:
+              'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+            icon: 'flat-color-icons:advertising',
+          },
+          {
+            title: 'Pricing',
+            description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+            icon: 'flat-color-icons:currency-exchange',
+          },
+          {
+            title: 'Testimonial',
+            description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+            icon: 'flat-color-icons:voice-presentation',
+          },
+          {
+            title: 'Contact',
+            description:
+              'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+            icon: 'flat-color-icons:business-contact',
+          },
+          {
+            title: 'Footers',
+            description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+            icon: 'flat-color-icons:database',
+          },
+        ]}
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+      </Features2>
+    </div>
+
+    <!-- Features3 -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Features3
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Features3.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>
+        </p>
+      </div>
+
+      <Features3
+        title="Our templates"
+        subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla."
+        columns={3}
+        items={[
+          {
+            title: 'Educational',
+            description:
+              'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a.',
+            icon: 'tabler:template',
+          },
+          {
+            title: 'Interior Design',
+            description:
+              'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat.',
+            icon: 'tabler:template',
+          },
+          {
+            title: 'Photography',
+            description:
+              'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat.',
+            icon: 'tabler:template',
+          },
+          {
+            title: 'E-commerce',
+            description:
+              'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet.',
+            icon: 'tabler:template',
+          },
+          {
+            title: 'Blog',
+            description:
+              'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet.',
+            icon: 'tabler:template',
+          },
+          {
+            title: 'Business',
+            description:
+              'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus.',
+            icon: 'tabler:template',
+          },
+        ]}
+        image={{
+          src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+          alt: 'Features3 Image',
+        }}
+      />
+    </div>
+  </div>
+
+  <!-- CONTENT COMPONENT SECTION -->
+  <div id="content-components" class="bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-purple-500">
+        <h2 class="text-3xl font-bold dark:text-white">Content Component</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- Content (Standard) -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Content (Image Right)
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Content.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>
+        </p>
+      </div>
+
+      <Content
+        isReversed
+        tagline="Inside template"
+        title="AstroWind's Blueprint: Fun Meets Functionality!"
+        items={[
+          {
+            title: 'Built on top of Astro 5.0',
+            description:
+              'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          },
+          {
+            title: 'Styled using Tailwind CSS',
+            description:
+              'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          },
+          {
+            title: 'Cross-browser compatibility',
+            description:
+              'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          },
+        ]}
+        image={{
+          src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Content Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+          Gain a competitive advantage by incorporating industry leading practices
+        </Fragment>
+
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+      </Content>
+    </div>
+
+    <!-- Content (Reversed) -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Content (Image Left - isAfterContent)
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Content.astro</code>
+          <br />
+          Props: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">isAfterContent={true}</code>
+        </p>
+      </div>
+
+      <Content
+        isAfterContent
+        items={[
+          {
+            title: 'High level of customization',
+            description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct.`,
+          },
+          {
+            title: 'Multiple layout possibilities',
+            description:
+              'Explore various layout options to find the structure that best presents your content.',
+          },
+          {
+            title: 'Fully responsive design',
+            description:
+              "Ensure your website's optimal performance on various devices and screen sizes.",
+          },
+          {
+            title: 'Integration of media',
+            description:
+              'Seamlessly incorporate images, videos, and multimedia elements that enhance your content.',
+          },
+        ]}
+        image={{
+          src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+          alt: 'Content Image',
+        }}
+      >
+        <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+      </Content>
+    </div>
+  </div>
+
+  <!-- STEPS COMPONENTS SECTION -->
+  <div id="steps-components" class="bg-blue-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-orange-500">
+        <h2 class="text-3xl font-bold dark:text-white">Steps Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Steps
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Steps.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Timeline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>
+        </p>
+      </div>
+
+      <Steps
+        title="Get your dream website up and running in no time with AstroWind."
+        items={[
+          {
+            title: 'Step 1: <span class="font-medium">Download</span>',
+            description:
+              "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits.",
+            icon: 'tabler:package',
+          },
+          {
+            title: 'Step 2: <span class="font-medium">Add content</span>',
+            description:
+              "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space.",
+            icon: 'tabler:letter-case',
+          },
+          {
+            title: 'Step 3: <span class="font-medium">Customize styles</span>',
+            description:
+              'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right.',
+            icon: 'tabler:paint',
+          },
+          {
+            title: 'Ready!',
+            icon: 'tabler:check',
+          },
+        ]}
+        image={{
+          src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+          alt: 'Steps image',
+        }}
+      />
+    </div>
+
+    <!-- Steps2 -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Steps2
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Steps2.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <Steps2
+        title="Our values"
+        subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus."
+        items={[
+          {
+            title: 'Customer-centric approach',
+            description:
+              'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo.',
+          },
+          {
+            title: 'Constant Improvement',
+            description:
+              'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis.',
+          },
+          {
+            title: 'Ethical Practices',
+            description:
+              'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta.',
+          },
+        ]}
+      />
+    </div>
+
+    <!-- Steps2 Reversed -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Steps2 (Reversed with Icons)
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Steps2.astro</code>
+          <br />
+          Props: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">isReversed={true}</code>
+        </p>
+      </div>
+
+      <Steps2
+        title="Achievements"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis."
+        isReversed={true}
+        callToAction={{
+          text: 'See more',
+          href: '/',
+        }}
+        items={[
+          {
+            title: 'Global reach',
+            description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi.',
+            icon: 'tabler:globe',
+          },
+          {
+            title: 'Positive customer feedback',
+            description:
+              'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa.',
+            icon: 'tabler:message-star',
+          },
+          {
+            title: 'Awards and recognition',
+            description:
+              'Phasellus lacinia cursus velit, eu malesuada magna pretium eu.',
+            icon: 'tabler:award',
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- OTHER MAJOR WIDGETS SECTION -->
+  <div id="announcement" class="bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-red-500">
+        <h2 class="text-3xl font-bold dark:text-white">Other Major Widgets</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- Announcement -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Announcement
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Announcement.astro</code>
+          <br />
+          No child components
+        </p>
+      </div>
+
+      <Announcement />
+    </div>
+  </div>
+
+  <!-- Note -->
+  <div id="note" class="bg-blue-50 dark:bg-slate-900">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Note
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Note.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+    </div>
+  </div>
+
+  <!-- Brands -->
+  <div id="brands" class="bg-white dark:bg-transparent">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Brands
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Brands.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <Brands
+        title="Trusted by leading brands"
+        subtitle="Join the companies that choose our platform"
+        icons={['tabler:brand-react', 'tabler:brand-tailwind', 'tabler:brand-github', 'tabler:brand-typescript']}
+      />
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div id="stats" class="bg-blue-50 dark:bg-slate-900">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Stats
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Stats.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/WidgetWrapper.astro</code>
+        </p>
+      </div>
+
+      <Stats
+        title="Statistics about us"
+        stats={[
+          { title: 'Downloads', amount: '132K' },
+          { title: 'Stars', amount: '24.8K' },
+          { title: 'Forks', amount: '10.3K' },
+          { title: 'Users', amount: '48.4K' },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div id="pricing" class="bg-white dark:bg-transparent">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Pricing
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Pricing.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Button.astro</code>
+        </p>
+      </div>
+
+      <Pricing
+        title="Our prices"
+        subtitle="Only pay for what you need"
+        prices={[
+          {
+            title: 'basic',
+            subtitle: 'Optimal choice for personal use',
+            price: 29,
+            period: 'per month',
+            items: [
+              { description: 'Etiam in libero' },
+              { description: 'Aenean ac nunc dolor' },
+              { description: 'Cras scelerisque accumsan' },
+            ],
+            callToAction: {
+              target: '_blank',
+              text: 'Get started',
+              href: '#',
+            },
+          },
+          {
+            title: 'standard',
+            subtitle: 'Optimal choice for small teams',
+            price: 69,
+            period: 'Per Month',
+            items: [
+              { description: 'Proin vel laoreet' },
+              { description: 'Ut efficitur habitasse' },
+              { description: 'Volutpat hac curabitur' },
+              { description: 'Pellentesque blandit' },
+            ],
+            callToAction: {
+              target: '_blank',
+              text: 'Get started',
+              href: '#',
+            },
+            hasRibbon: true,
+            ribbonTitle: 'popular',
+          },
+          {
+            title: 'premium',
+            subtitle: 'Optimal choice for companies',
+            price: 199,
+            period: 'Per Month',
+            items: [
+              { description: 'Curabitur suscipit risus' },
+              { description: 'Aliquam habitasse' },
+              { description: 'Suspendisse sit amet' },
+            ],
+            callToAction: {
+              target: '_blank',
+              text: 'Get started',
+              href: '#',
+            },
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div id="testimonials" class="bg-blue-50 dark:bg-slate-900">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Testimonials
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Testimonials.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/common/Image.astro</code>
+        </p>
+      </div>
+
+      <Testimonials
+        title="Words from real customers"
+        testimonials={[
+          {
+            testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time.`,
+            name: 'Emily Kennedy',
+            job: 'Front-end developer',
+            image: {
+              src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=930&q=80',
+              alt: 'Emily Kennedy Image',
+            },
+          },
+          {
+            testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine.`,
+            name: 'Sarah Hansen',
+            job: 'Photographer',
+            image: {
+              src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+              alt: 'Sarah Hansen Image',
+            },
+          },
+          {
+            testimonial: `I discovered these templates and I'm impressed by their variety and quality.`,
+            name: 'Mark Wilkinson',
+            job: 'Small business owner',
+            image: {
+              src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=824&q=80',
+              alt: 'Mark Wilkinson Image',
+            },
+          },
+        ]}
+        callToAction={{
+          target: '_blank',
+          text: 'More testimonials...',
+          href: '#',
+          icon: 'tabler:chevron-right',
+        }}
+      />
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div id="faqs" class="bg-white dark:bg-transparent">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          FAQs
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/FAQs.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <FAQs
+        title="Frequently Asked Questions"
+        subtitle="Dive into the following questions to gain insights into the powerful features."
+        tagline="FAQs"
+        items={[
+          {
+            title: 'Why AstroWind?',
+            description:
+              "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law.",
+          },
+          {
+            title: 'What do I need to start?',
+            description:
+              'Space, the final frontier. These are the voyages of the Starship Enterprise.',
+          },
+          {
+            title: 'How to install the Astro + Tailwind CSS template?',
+            description:
+              "Well, the way they make shows is, they make one show. That show's called a pilot.",
+          },
+          {
+            title: "What's something that you don't understand?",
+            description:
+              "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="bg-blue-50 dark:bg-slate-900">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Contact
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Contact.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Form.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Headline.astro</code>
+        </p>
+      </div>
+
+      <Contact
+        title="Get in touch"
+        subtitle="We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Name',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Email',
+          },
+        ]}
+        textarea={{
+          label: 'Message',
+        }}
+        disclaimer={{
+          label:
+            'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        }}
+      />
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div id="call-to-action" class="bg-white dark:bg-transparent">
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4 pt-8">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          CallToAction
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/CallToAction.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/ui/Button.astro</code>
+        </p>
+      </div>
+
+      <CallToAction
+        actions={[
+          {
+            variant: 'primary',
+            text: 'Get template',
+            href: 'https://github.com/arthelokyo/astrowind',
+            target: '_blank',
+            icon: 'tabler:download',
+          },
+        ]}
+      >
+        <Fragment slot="title">
+          Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+        </Fragment>
+
+        <Fragment slot="subtitle">
+          Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+          waste more time!
+        </Fragment>
+      </CallToAction>
+    </div>
+  </div>
+
+  <!-- BLOG WIDGETS SECTION -->
+  <div id="blog-widgets" class="bg-blue-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-pink-500">
+        <h2 class="text-3xl font-bold dark:text-white">Blog Widgets</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <!-- BlogLatestPosts -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          BlogLatestPosts
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/BlogLatestPosts.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/blog/Grid.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/blog/Headline.astro</code>
+        </p>
+      </div>
+
+      <BlogLatestPosts
+        title="Find out more content in our Blog"
+        information={`The blog is used to display AstroWind documentation.
+                Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                Astro is a very interesting technology. Thanks.
+                `}
+      />
+    </div>
+
+    <!-- BlogHighlightedPosts -->
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          BlogHighlightedPosts
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          File: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/BlogHighlightedPosts.astro</code>
+          <br />
+          Uses: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/blog/Grid.astro</code>,
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">~/components/blog/Headline.astro</code>
+        </p>
+      </div>
+
+      <BlogHighlightedPosts
+        title="Highlighted Posts"
+        information={`Featured articles and tutorials to help you get started with AstroWind.`}
+      />
+    </div>
+  </div>
+
+  <!-- NAVIGATION COMPONENTS SECTION -->
+  <div id="navigation" class="bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8 pb-4 border-b-4 border-teal-500">
+        <h2 class="text-3xl font-bold dark:text-white">Navigation Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <h3 class="text-2xl font-semibold dark:text-white bg-gray-100 dark:bg-gray-800 p-4 rounded">
+          Header & Footer
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 ml-4">
+          Files:
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Header.astro</code>
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/widgets/Footer.astro</code>
+          <br />
+          Note: These are included in the Layout component and are visible at the top and bottom of this page.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="bg-blue-100 dark:bg-blue-900 p-8 rounded-lg text-center">
+          <p class="text-lg dark:text-white">
+            The Header is visible at the top of this page.<br />
+            The Footer is visible at the bottom of this page.<br />
+            Both are part of the Layout component wrapper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI COMPONENTS INFO SECTION -->
+  <div class="bg-blue-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="mb-8 pb-4 border-b-4 border-indigo-500">
+        <h2 class="text-3xl font-bold dark:text-white">UI Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/ui/</code>
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 dark:text-white">Available UI Components:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Background</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/Background.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Button</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/Button.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">DListItem</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/DListItem.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Form</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/Form.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Headline</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/Headline.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ItemGrid</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/ItemGrid.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ItemGrid2</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/ItemGrid2.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Timeline</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/Timeline.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">WidgetWrapper</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">ui/WidgetWrapper.astro</code>
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-gray-600 dark:text-gray-400">
+          These UI components are used internally by the widget components above. They provide reusable building blocks
+          for buttons, forms, grids, timelines, and other interface elements.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG DETAIL COMPONENTS INFO SECTION -->
+  <div class="bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="mb-8 pb-4 border-b-4 border-yellow-500">
+        <h2 class="text-3xl font-bold dark:text-white">Blog Detail Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/blog/</code>
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border dark:border-gray-700">
+        <h3 class="text-2xl font-bold mb-4 dark:text-white">Available Blog Components:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Grid</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/Grid.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">GridItem</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/GridItem.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Headline</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/Headline.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">List</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/List.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ListItem</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/ListItem.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Pagination</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/Pagination.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">RelatedPosts</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/RelatedPosts.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">SinglePost</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/SinglePost.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Tags</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/Tags.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ToBlogLink</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">blog/ToBlogLink.astro</code>
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-gray-600 dark:text-gray-400">
+          These components are used for blog post listings, individual post pages, pagination, tags, and related content.
+          Visit the <a href="/blog" class="text-blue-600 dark:text-blue-400 hover:underline">/blog</a> section to see them in action.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMON COMPONENTS INFO SECTION -->
+  <div class="bg-blue-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="mb-8 pb-4 border-b-4 border-gray-500">
+        <h2 class="text-3xl font-bold dark:text-white">Common Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/components/common/</code>
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 dark:text-white">Available Common Components:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Image</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/Image.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ToggleMenu</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/ToggleMenu.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">ToggleTheme</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/ToggleTheme.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">SocialShare</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/SocialShare.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Analytics</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/Analytics.astro</code>
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Metadata</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              <code class="text-xs">common/Metadata.astro</code>
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-gray-600 dark:text-gray-400">
+          These components provide common functionality like image optimization, theme toggling, social sharing,
+          analytics integration, and SEO metadata.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LAYOUT COMPONENTS INFO SECTION -->
+  <div class="bg-white dark:bg-transparent pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="mb-8 pb-4 border-b-4 border-cyan-500">
+        <h2 class="text-3xl font-bold dark:text-white">Layout Components</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Folder: <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">src/layouts/</code>
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border dark:border-gray-700">
+        <h3 class="text-2xl font-bold mb-4 dark:text-white">Available Layout Components:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">Layout</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <code class="text-xs">layouts/Layout.astro</code>
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Base layout with HTML structure, metadata, and scripts
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">PageLayout</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <code class="text-xs">layouts/PageLayout.astro</code>
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Layout for standard pages with header and footer
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">LandingLayout</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <code class="text-xs">layouts/LandingLayout.astro</code>
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Layout optimized for landing pages
+            </p>
+          </div>
+          <div class="border dark:border-gray-600 p-4 rounded">
+            <h4 class="font-semibold dark:text-white">MarkdownLayout</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <code class="text-xs">layouts/MarkdownLayout.astro</code>
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Layout for markdown/blog content with typography styling
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-gray-600 dark:text-gray-400">
+          These layouts wrap your page content and provide consistent structure, navigation, and styling.
+          This showcase page uses <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">PageLayout</code>.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<!-- Scroll to Top Button -->
+<button
+  id="scroll-to-top"
+  aria-label="Scroll to top"
+  class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  // Scroll to top functionality
+  const scrollButton = document.getElementById('scroll-to-top');
+
+  if (scrollButton) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollButton.classList.remove('opacity-0', 'pointer-events-none');
+        scrollButton.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        scrollButton.classList.add('opacity-0', 'pointer-events-none');
+        scrollButton.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    });
+
+    // Scroll to top when clicked
+    scrollButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
+
+<style>
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
